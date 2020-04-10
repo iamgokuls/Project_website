@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+	<title>Signup</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="{% static 'forms/images/icons/favicon.ico' %}"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'forms/vendor/bootstrap/css/bootstrap.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'forms/fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'forms/vendor/animate/animate.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'forms/vendor/css-hamburgers/hamburgers.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'forms/vendor/animsition/css/animsition.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'forms/vendor/select2/select2.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'forms/vendor/daterangepicker/daterangepicker.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'forms/css/util.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'forms/css/main.css' %}">
+<!--===============================================================================================-->
+</head>
+<body>
+
+	
+	<div class="container-contact100">
+	
+		<div class="wrap-contact100">
+		
+			<form class="contact100-form validate-form" action="" method="POST">
+			{% csrf_token %}
+				<span class="contact100-form-title">
+					Signup
+				</span>
+				{% if flag %}
+					<center style="color:green"><span>{{text}}</span></center><br>
+				{% else %}
+					<center style="color:red"><span>{{text}}</span></center><br>
+				{% endif %}
+				<div class="wrap-input100 validate-input" data-validate="Enter your name">
+					<input class="input100" type="text" name="first_name" placeholder="Enter your Name" required="">
+					<span class="focus-input100"></span>
+				</div>
+
+
+
+				<div class="wrap-input100 validate-input" data-validate = "Enter your email:">
+					<input class="input100" type="text" name="email" placeholder="Enter your E-mail" required="">
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="wrap-input100 validate-input" data-validate = "Enter enter your phone">
+					<input class="input100" type="number" name="username" placeholder="Enter your Phone number(This is your username)" required>
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="wrap-input100 validate-input" data-validate = "Enter your password">
+					<input class="input100" type="password" name="password1" placeholder="Enter Password" required>
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="wrap-input100 validate-input" data-validate = "confirmpassword">
+					<input class="input100" type="password" name="password2" placeholder="Confirm password" required>
+					<span class="focus-input100"></span>
+				</div>
+				<div>
+				
+				
+				
+
+				{% for msg in form.errors.values %}
+					<font size="3"><center style="color:red">{{msg}}</center><font>
+				{% endfor %}
+				
+
+					
+				
+				</div>
+				
+				<div class="container-contact100-form-btn">
+					<button class="contact100-form-btn">
+						<span>
+							<i class="fa fa-paper-plane-o m-r-6" aria-hidden="true"></i>
+							Signup
+						</span>
+					</button>
+					
+				</div>
+				<br>
+				<center>Already a member?<a href="{% url 'login' %}">Login</a></center>
+				<br>
+				<center style="color:green"><a href="{% url 'index' %}">Go to Home Page</a></center><br>
+			</form>
+		</div>
+	</div>
+
+
+
+	<div id="dropDownSelect1"></div>
+
+<!--===============================================================================================-->
+	<script src="{% static 'forms/vendor/jquery/jquery-3.2.1.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'forms/vendor/animsition/js/animsition.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'forms/vendor/bootstrap/js/popper.js' %}"></script>
+	<script src="{% static 'forms/vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'forms/vendor/select2/select2.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'forms/vendor/daterangepicker/moment.min.js' %}"></script>
+	<script src="{% static 'forms/vendor/daterangepicker/daterangepicker.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'forms/vendor/countdowntime/countdowntime.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'forms/js/main.js' %}"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics 
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-23581568-13');
+</script>
+-->
+</body>
+</html>

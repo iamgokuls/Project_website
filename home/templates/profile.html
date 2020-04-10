@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+{% load static %}
+<html>
+	<head>
+		<title>{{user.first_name}}</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="{% static 'home/css/main.css' %}" />
+		
+    </head>
+    <body style="background : rgb(235, 230, 230);">
+        <header id="header">
+				<div class="inner">
+					<!--<a href="index.html" class="logo"><strong>Projection</strong> by TEMPLATED</a>-->
+					<nav id="nav">
+						<span><font color="green" style="text-transform:capitalize">{{user.first_name}}</font></span>
+					</nav>
+					<a href="#navPanel" class="navPanelToggle"><span class="fa fa-bars"></span></a>
+				</div>
+		</header>
+        <section class="wrapper align-center" >
+	    	<br><br><br><br>
+            <ul class="actions">
+                <li><a href="{% static 'files/banner.jpg' %}" class="button" download>Download</a></li>
+                <br><br>
+                <li><a href="{% url 'changeinfo' %}" class="button">Edit Profile</a></li>
+                <br><br>
+                <li><a href="{% url 'changepass' %}" class="button">Change Password</a></li>
+                <br><br>
+                <li><a href="{% url 'logoutuser' %}" class="button">Sign Out</a></li>                
+             </ul>
+        
+	    </section>	
+
+        <script src="{% static 'home/js/jquery.min.js' %}"></script>
+			<script src="{% static 'home/js/skel.min.js' %}"></script>
+			<script src="{% static 'home/js/util.js' %}"></script>
+			<script src="{% static 'home/js/main.js' %}"></script>
+    </body>
+</html>

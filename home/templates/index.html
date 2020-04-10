@@ -1,0 +1,191 @@
+<!DOCTYPE HTML>
+{% load static %}
+<html>
+	<head>
+		<title>Intelligent Surveillance Camera System</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="static/home/css/main.css" />
+		
+	</head>
+	<body>
+
+		<!-- Header -->
+			<header id="header">
+				<div class="inner">
+					<a href="{% url 'index' %}" class="logo"><strong><img src="{% static 'images/abc.png' %}"></strong></a>
+					<nav id="nav">
+						<a href="{% url 'index' %}">Home</a>
+						<a href="#about">Features</a>
+						<a href="#three">Our team</a>
+						<a href="{% url 'login' %}">Login</a>
+						<a href="#footer">Contact</a>
+					</nav>
+					<a href="#navPanel" class="navPanelToggle"><span class="fa fa-bars"></span></a>
+				</div>
+			</header>
+
+		<!-- Banner -->
+			<section id="banner">
+				<div class="inner">
+					<header>
+						<h1>Intelligent Surveillance Camera System</h1>
+					</header>
+
+					<div class="flex ">
+
+						<div>
+							<span class="icon fa-eye"></span>
+							<h3>Real Time Detection</h3>
+							<p>Reduce gap between crime and response</p>
+						</div>
+
+						<div>
+							<span class="icon fa-camera"></span>
+							<h3>Designed for CCTV</h3>
+							<p>Connects to your current security camera</p>
+						</div>
+
+						<div>
+							<span class="icon fa-bell"></span>
+							<h3>Alert configuration</h3>
+							<p>Always be informed with live alerts</p>
+						</div>
+
+					</div>
+
+					<footer>
+						<a href="{% url 'register' %}" class="button">Register</a>
+					</footer>
+				</div>
+			</section>
+
+		<!--about us -->	
+	    <section id="about" class="wrapper align-center" style="background : rgb(235, 230, 230);">
+	    	<header>
+					<h2><b>Upgrade your security</b></h2><br>
+				<p style="font-size:23px; font-family:courier;"> <font color="black">Feeling a need for more security than just a couple of security camera??? 
+				<br> Our Intelligent
+				crime detection system is the one stop destination.<br><br> Our sophisticated technology connects to your 
+				current security camera and lets you know about any sort of activities that might harm your loved 
+				once or your property. <br><br><b><i>A software product like no other!</i><b></font></p>
+				<br>
+				<a href="{% url 'profile' %}" class="button icon fa-download">-Download</a>
+
+			</header>
+			
+			
+	    </section>		
+		<!-- Three -->
+			<section id="three" class="wrapper align-center">
+				<header>
+					<h2><b>Our team</b></h2>
+				</header>
+				<div class="inner">
+					
+					&nbsp;
+					<div class="flex flex-3">
+						<article>
+							<div class="image round">
+								<img src="{% static 'images/1.jpg' %}" alt="Pic 01" />
+							</div>
+							<header style="font-family:sans-serif">
+								<h3>Gokul S</h3>
+							</header>
+							<ul class="icons">
+								<li><a href="https://twitter.com/_Gokul_S_" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+								<li><a href="https://www.linkedin.com/in/gokul-s-526574149" class="icon fa-linkedin"><span class="label">Facebook</span></a></li>
+								<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+								<li><a href="https://github.com/iamgokuls" class="icon fa-github"><span class="label">Github</span></a></li>
+							</ul>
+							
+						</article>
+						<article>
+							<div class="image round">
+								<img src="{% static 'images/pic02.jpg' %}" alt="Pic 02" />
+							</div>
+							<header style="font-family:sans-serif">
+								<h3>Rahul Ramakrishnan</h3>
+							</header>
+							<ul class="icons">
+								<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+								<li><a href="#" class="icon fa-linkedin"><span class="label">Facebook</span></a></li>
+								<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+								<li><a href="#" class="icon fa-github"><span class="label">Github</span></a></li>
+							</ul>
+							
+						</article>
+						<article>
+							<div class="image round">
+								<img src="{% static 'images/pic03.jpg' %}" alt="Pic 01" />
+							</div>
+							<header style="font-family:sans-serif">
+								<h3>Sudheesh M</h3>
+							</header>
+							<ul class="icons">
+								<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+								<li><a href="#" class="icon fa-linkedin"><span class="label">Facebook</span></a></li>
+								<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+								<li><a href="#" class="icon fa-github"><span class="label">Github</span></a></li>
+							</ul>
+							
+						</article>
+						<article>
+							<div class="image round">
+								<img src="{% static 'images/pic05.jpg' %}" alt="Pic 02" />
+							</div>
+							<header style="font-family:sans-serif">
+								<h3>Amal Johnson</h3>
+							</header>
+							<ul class="icons">
+								<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+								<li><a href="#" class="icon fa-linkedin"><span class="label">Facebook</span></a></li>
+								<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+								<li><a href="#" class="icon fa-github"><span class="label">Github</span></a></li>
+							</ul>
+						</article>
+					</div>
+				</div>
+			</section>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="inner">
+
+					<h3>Get in touch</h3>
+
+					<form action="{% url 'feedback' %}" method="post">
+						{% csrf_token %}
+						<div class="field half first">
+							<label for="name">Name</label>
+							<input name="name" name="name" type="text" placeholder="Name" required>
+						</div>
+						<div class="field half">
+							<label for="email">Email</label>
+							<input name="email" name="email" type="email" placeholder="Email" required>
+						</div>
+						<div class="field">
+							<label for="content">Message</label>
+							<textarea  name="content" rows="6" placeholder="Message" required></textarea>
+						</div>
+						{% for msg in form.errors.values %}
+							<font size="3"><center style="color:white">{{msg}}</center><font>
+						{% endfor %}
+						<ul class="actions">
+							<li><input value="Send Message" class="button alt" type="submit"></li>
+						</ul>
+					</form>
+					
+					
+
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="static/home/js/jquery.min.js"></script>
+			<script src="static/home/js/skel.min.js"></script>
+			<script src="static/home/js/util.js"></script>
+			<script src="static/home/js/main.js"></script>
+
+	</body>
+</html>
