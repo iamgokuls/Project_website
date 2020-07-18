@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+{% load static %}
+<html>
+	<head>
+		<title>History</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="{% static 'home/css/main.css' %}"/>
+	</head>
+	<body class="subpage">
+
+		<!-- Header -->
+			<header id="header">
+				<div class="inner">
+					
+				</div>
+			</header>
+
+		<!-- Main -->
+			
+				<div class="inner">
+
+					<br><br>	
+					<center><h3>History</h3></center>
+					<br>
+						
+						
+						<div class="table-wrapper">
+							<table width="80%" style="margin: 0 auto;  solid;text-align:center">
+								<thead>
+									<tr>
+										<th><center>S.NO</center></th>
+										<th><center>MESSAGE</center></th>
+										<th><center>TIME</center></th>
+									</tr>
+								</thead>
+								
+								<tbody>
+									
+									{% for index,result in results %}
+									<tr>
+										<td>{{ index }}</td>
+										<td>{{result.message}}</td>
+										<td>{{result.datetime}}</td>
+									</tr>
+									{% endfor %}
+									
+								</tbody>
+								<tfoot>
+									<tr>
+
+									</tr>
+								</tfoot>
+							</table>
+									{% if flag %}
+										<br>
+										<center>No records found</center>
+									{% endif %}
+						</div>
+
+						
+						
+
+					
+
+				</div>
+
+			</section>
+
+		
+
+		<!-- Scripts -->
+			<script src="{% static 'home/js/jquery.min.js' %}"></script>
+			<script src="{% static 'home/js/skel.min.js' %}"></script>
+			<script src="{% static 'home/js/util.js' %}"></script>
+			<script src="{% static 'home/js/main.js' %}"></script>
+
+	</body>
+</html>

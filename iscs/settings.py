@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = ')a*8xqrg8nowj3()78+pc8i%4mb0r+kh&kf^!7uo@bl3#wyne('
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["*"]
 
@@ -124,6 +124,6 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com' # mail service smtp
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'gokulsgs0@gmail.com' # email id
-EMAIL_HOST_PASSWORD = 'gokuls910.gs' #password
+EMAIL_HOST_USER = 'gars.system@gmail.com' # email id
+EMAIL_HOST_PASSWORD = 'gars@123' #password
 

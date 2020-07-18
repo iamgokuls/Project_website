@@ -11,7 +11,7 @@
     <body style="background : rgb(235, 230, 230);">
         <header id="header">
 				<div class="inner">
-					<!--<a href="index.html" class="logo"><strong>Projection</strong> by TEMPLATED</a>-->
+					<span class="logo"><font color="green"><a href="{% url 'index' %}">Go To Home Page</a></font></span>
 					<nav id="nav">
 						<span><font color="green" style="text-transform:capitalize">{{user.first_name}}</font></span>
 					</nav>
@@ -21,10 +21,14 @@
         <section class="wrapper align-center" >
 	    	<br><br><br><br>
             <ul class="actions">
-                <li><a href="{% static 'files/banner.jpg' %}" class="button" download>Download</a></li>
+			
+				<li><a href="{% url 'history' %}" class="button">History</a></li>
+                <br><br>
+                <li><a href="{% static 'files/NotFound.png' %}" class="button" download>Download</a></li>
                 <br><br>
                 <li><a href="{% url 'changeinfo' %}" class="button">Edit Profile</a></li>
                 <br><br>
+				
                 <li><a href="{% url 'changepass' %}" class="button">Change Password</a></li>
                 <br><br>
                 <li><a href="{% url 'logoutuser' %}" class="button">Sign Out</a></li>                

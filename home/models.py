@@ -9,3 +9,12 @@ class feedback(models.Model):
 
     def __str__(self):
         return self.name
+        
+class history(models.Model):
+    email=models.EmailField()
+    message=models.CharField(max_length=120)
+    datetime= models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.email
+    

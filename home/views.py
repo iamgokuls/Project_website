@@ -5,6 +5,9 @@ from .forms import RegistrationForm,EditProfile,Feedback
 from django.contrib.auth.models import User,auth
 from django.contrib.auth.forms import PasswordChangeForm
 from django.contrib.auth import update_session_auth_hash
+from django.http import HttpResponse
+from django.views.decorators.csrf import csrf_exempt
+from .models import history
 # Create your views here.
 
 def homeview(request):
@@ -56,8 +59,19 @@ class LoginPage(TemplateView):
             messages="Invalid User Credentials"
             return render(request,'login.html',{'messages':messages})
             #redirect('login')
+@csrf_exempt
+def getmail(request):
+    username=request.POST.get('username')
+    password=request.POST.get('password')
 
+    user=auth.authenticate(request,username=username,password=password)
 
+    if user is not None:
+        message=user.email
+        return HttpResponse(message)
+    else:
+        message="invalid"
+        return HttpResponse(message)
 
 
 @login_required(login_url='login')
@@ -106,6 +120,26 @@ def feedback(request):
     else:
         return redirect('index')
 
+@csrf_exempt
+def sethistory(request):
+    if request.method=="POST":
+        email=request.POST.get('email')
+        message=request.POST.get('message')
+        obj=history(email=email,message=message)
+        obj.save()
+        return HttpResponse("success")
+
+@login_required(login_url='login')
+def gethistory(request):
+   
+    if request.method=="GET":
+        mailid=request.user.email
+        results=enumerate(history.objects.filter(email=mailid).order_by('-datetime'),1)
+        length=len(history.objects.filter(email=mailid))
+        flag=0
+        if(length==0):
+            flag=1
+        return render(request,'history.html',{'results':results,'flag':flag})
 
 def error_404_view(request,exception=None):
     data={}
